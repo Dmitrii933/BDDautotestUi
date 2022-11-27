@@ -1,6 +1,8 @@
 package com.pages;
 
 import com.componets.PopularCursComponent;
+import com.diconfig.GuiceScoped;
+import com.google.inject.Inject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,9 +13,9 @@ import java.util.NoSuchElementException;
 
 public class MainPage extends AbsBasePage<MainPage>{
 
-    public MainPage(WebDriver driver) {
-        super(driver);
+    @Inject
+    public MainPage(GuiceScoped guiceScoped) {
+        super(guiceScoped.driver);
     }
-
 
 }

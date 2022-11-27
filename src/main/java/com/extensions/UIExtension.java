@@ -20,8 +20,6 @@ import java.util.concurrent.TimeUnit;
 public class UIExtension implements BeforeEachCallback, AfterEachCallback {
 
   private WebDriver driver = null;
-  private String browser = System.getProperty("browser");
-
   private Set<Field> getAnnotatedFields(Class<? extends Annotation> annotation, ExtensionContext extensionContext) {
     Set<Field> set = new HashSet<>();
     Class<?> testClass = extensionContext.getTestClass().get();
@@ -39,7 +37,7 @@ public class UIExtension implements BeforeEachCallback, AfterEachCallback {
   @Override
   public void beforeEach(ExtensionContext extensionContext) throws BrowserNotSupportedException {
     Set<Field> fields = getAnnotatedFields(Driver.class, extensionContext);
-    driver = new DriverFactory().getDriver(browser);
+    driver = new DriverFactory().getDriver();
 
 
     for (Field field : fields) {

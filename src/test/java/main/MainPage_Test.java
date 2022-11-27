@@ -6,6 +6,7 @@ import com.extensions.UIExtension;
 
 import com.pages.SolutionarchitectPage;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -23,12 +24,11 @@ public class MainPage_Test {
 
     @Test
     public void filterTest (){
-        String title = "Cloud Solution Architecture";
         new MainPage(driver)
                 .open();
 
-        new PopularCursComponent(driver).
-                filterStream(title);
+        new PopularCursComponent(driver).selectTitle("Cloud Solution Architecture").
+                filterStream().click();
 
 new SolutionarchitectPage(driver)
                         .getTitle(title);
@@ -36,6 +36,7 @@ new SolutionarchitectPage(driver)
     }
 
     @Test
+    @Disabled
     public void maxDateTest (){
 
         new MainPage(driver)
@@ -46,6 +47,7 @@ new SolutionarchitectPage(driver)
     }
 
     @Test
+    @Disabled
     public void minDateTest (){
 
         new MainPage(driver)
@@ -56,6 +58,7 @@ new SolutionarchitectPage(driver)
     }
 
     @Test
+    @Disabled
     public void actionMoveElementTest (){
 
         new MainPage(driver)

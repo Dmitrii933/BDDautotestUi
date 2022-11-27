@@ -11,9 +11,11 @@ import org.openqa.selenium.opera.OperaDriver;
 
 public class DriverFactory implements IDriverFactory{
 
+    private String browser = System.getProperty("browser");
+
     @Override
-    public WebDriver getDriver(String browser) throws BrowserNotSupportedException {
-        switch (browser){
+    public WebDriver getDriver() throws BrowserNotSupportedException {
+        switch (this.browser){
             case "EDGE":
                 WebDriverManager.edgedriver().setup();
                 return new EdgeDriver();
