@@ -1,5 +1,6 @@
 package com.pages;
 
+import com.wait.WaitElementVisible;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -32,4 +33,5 @@ public abstract class AbsBasePage<T> {
         return (T) this;
 
     }
+
 }

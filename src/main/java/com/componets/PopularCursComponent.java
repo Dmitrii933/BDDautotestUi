@@ -1,34 +1,30 @@
 package com.componets;
-
+import com.data.DateData;
 import com.diconfig.GuiceScoped;
 import com.google.inject.Inject;
-import com.pages.SolutionarchitectPage;
-import org.junit.jupiter.api.Assertions;
+import com.wait.WaitElementVisible;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
-
 import java.util.function.BinaryOperator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 
-
-public class PopularCursComponent extends AbsComponent<PopularCursComponent> {
+public class PopularCursComponent<T> extends AbsComponent<PopularCursComponent> {
 
     @Inject
     public PopularCursComponent(GuiceScoped guiceScoped) {
 
         super(guiceScoped.driver);
-    }
 
+    }
     @FindBy(css = ".lessons__new-item-bg")
     private List<WebElement> popularCursItems;
 
@@ -39,6 +35,11 @@ public class PopularCursComponent extends AbsComponent<PopularCursComponent> {
     private List<WebElement> titleCursItems;
 
 
+
+    public T waitLogoVisible(WebDriver driver, WebElement element) {
+        WaitElementVisible.waitElementVisible(driver, element);
+        return (T) this;
+    }
     private List<LocalDate> getDateFromPage() {
         List<WebElement> elements = driver.findElements(By.cssSelector(".lessons__new-item-start"));
 
@@ -72,7 +73,7 @@ public class PopularCursComponent extends AbsComponent<PopularCursComponent> {
         return 0;
     }
 
-    public PopularCursComponent movePopularCursItems(int index) {
+    public void movePopularCursItems(int index) {
         Actions actions = new Actions(driver);
         actions
                 .moveToElement(popularCursItems.get(index))
@@ -80,20 +81,18 @@ public class PopularCursComponent extends AbsComponent<PopularCursComponent> {
                 .moveByOffset(0, 0)
                 .build()
                 .perform();
-
-        return new PopularCursComponent(driver);
     }
 
-    public PopularCursComponent filterStream(String title) {
+    public WebElement filterStream(String title) {
         WebElement element = titleCursItems
                 .stream()
                 .filter((val) -> val.getText().trim().toLowerCase(Locale.ROOT).contains(title.toLowerCase(Locale.ROOT).trim()))
                 .findFirst()
                 .orElseThrow(NoSuchElementException::new);
-        element.click();
-        return new PopularCursComponent(driver);
-
+        waitLogoVisible(driver, element);
+        return element;
     }
+
 
     public LocalDate dateStreamReduce(BinaryOperator<LocalDate> operator) {
         List<LocalDate> localDates = getDateFromPage();

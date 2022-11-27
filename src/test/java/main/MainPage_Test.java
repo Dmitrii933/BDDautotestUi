@@ -2,6 +2,8 @@ package main;
 
 import com.annotations.Driver;
 import com.componets.PopularCursComponent;
+import com.diconfig.GuiceScoped;
+import com.exception.BrowserNotSupportedException;
 import com.extensions.UIExtension;
 
 import com.pages.SolutionarchitectPage;
@@ -22,51 +24,57 @@ public class MainPage_Test {
     @Driver
     private WebDriver driver;
 
+    private GuiceScoped guiceScoped = new GuiceScoped();
+
+    public MainPage_Test() throws BrowserNotSupportedException {
+    }
+
     @Test
-    public void filterTest (){
-        new MainPage(driver)
+    public void checkElementToTitleTest() {
+        String title = "Специализация QA Automation Engineer";
+        new MainPage(guiceScoped)
                 .open();
 
-        new PopularCursComponent(driver).selectTitle("Cloud Solution Architecture").
-                filterStream().click();
+        new PopularCursComponent(guiceScoped).
+                filterStream(title).click();
 
-new SolutionarchitectPage(driver)
-                        .getTitle(title);
+        new SolutionarchitectPage(guiceScoped)
+                .pageHeaderShouldBeSameAs(title);
 
     }
 
     @Test
     @Disabled
-    public void maxDateTest (){
+    public void maxDateTest() {
 
-        new MainPage(driver)
+        new MainPage(guiceScoped)
                 .open();
 
-        new PopularCursComponent(driver)
-        .dateStreamMax();
+        new PopularCursComponent(guiceScoped)
+                .dateStreamReduce((x, y) -> y.isAfter(x) ? y : x);
     }
 
     @Test
     @Disabled
-    public void minDateTest (){
+    public void minDateTest() {
 
-        new MainPage(driver)
+        new MainPage(guiceScoped)
                 .open();
 
-        new PopularCursComponent(driver)
-                .dateStreamMin();
+        new PopularCursComponent(guiceScoped)
+                .dateStreamReduce((x, y) -> y.isAfter(x) ? x : y);
+
     }
 
     @Test
     @Disabled
-    public void actionMoveElementTest (){
+    public void checkElementMoveTest() {
 
-        new MainPage(driver)
+        new MainPage(guiceScoped)
                 .open();
 
-        new PopularCursComponent(driver)
+        new PopularCursComponent(guiceScoped)
                 .movePopularCursItems(1);
-
     }
 
 }

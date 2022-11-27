@@ -1,7 +1,6 @@
 package com.extensions;
 
 import com.annotations.Driver;
-import com.driver.Browser;
 import com.driver.DriverFactory;
 import com.exception.BrowserNotSupportedException;
 import org.junit.jupiter.api.extension.AfterEachCallback;

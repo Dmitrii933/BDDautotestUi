@@ -1,6 +1,8 @@
 package com.componets;
 
+import com.wait.WaitElementVisible;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 public abstract class AbsComponent<T> {
@@ -9,6 +11,8 @@ public abstract class AbsComponent<T> {
     public AbsComponent(WebDriver driver) {
         this.driver = driver;
 
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
+
+
 }
