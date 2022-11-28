@@ -10,7 +10,7 @@ public class FilterSteps {
     @Inject
     private PopularCursComponent popularCursComponent;
 
-    @Если("Кликнуть на заголовок курса (.*)")
+    @Если("^Кликнуть на заголовок курса (.*)$")
     public void cursNotSelect(String courseName) {
         popularCursComponent.filterStream(courseName).click();
     }

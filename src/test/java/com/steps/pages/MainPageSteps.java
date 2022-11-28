@@ -8,7 +8,7 @@ public class MainPageSteps {
 @Inject
     private MainPage mainPage;
 
-@Пусть("Открываем главную страницу")
+@Пусть("^Открываем главную страницу$")
     public void open(){
 mainPage.open();
 }

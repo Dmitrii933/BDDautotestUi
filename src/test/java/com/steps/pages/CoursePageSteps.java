@@ -10,7 +10,7 @@ public class CoursePageSteps {
     @Inject
     private SolutionarchitectPage solutionarchitectPage;
 
-    @Тогда("Открыта страница c загловком курса (.*)")
+    @Тогда("^Открыта страница c загловком курса (.*)$")
     public void selectCurs(String header) {
         solutionarchitectPage.pageHeaderShouldBeSameAs(header);
     }

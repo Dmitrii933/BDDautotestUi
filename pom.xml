@@ -15,14 +15,14 @@
     <findbugs.version>3.0.5</findbugs.version>
     <checkstyle.version>3.2.0</checkstyle.version>
         <webdrivermanadger.version>5.3.0</webdrivermanadger.version>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.2</junit.version>
         <selenium.version>3.141.59</selenium.version>
         <faker.version>1.0.2</faker.version>
         <surefire.plugin.version>2.22.2</surefire.plugin.version>
         <browser>CHROME</browser>
         <webdriver.base.url>https://otus.ru</webdriver.base.url>
         <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
-        <cucumber.version>5.7.0</cucumber.version>
+        <cucumber.version>7.8.1</cucumber.version>
 
 </properties>
 
@@ -113,12 +113,12 @@
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
-            <version>6.10.2</version>
+            <version>${cucumber.version}</version>
         </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
-            <version>6.10.2</version>
+            <version>${cucumber.version}</version>
         </dependency>
 
         <dependency>
@@ -147,7 +147,7 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
-            <version>5.7.0</version>
+            <version>5.9.0</version>
         </dependency>
         <dependency>
             <groupId>com.github.javafaker</groupId>
