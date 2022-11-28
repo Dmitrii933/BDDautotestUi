@@ -13,7 +13,7 @@ public class WaitElementVisible {
 
     public static WebElement waitElementVisible(WebDriver driver, WebElement element){
 
-        return new WebDriverWait(driver, TIMEOUT)
+        return new WebDriverWait(driver, 100)
                 .until(ExpectedConditions.visibilityOf(element));
     }
 }

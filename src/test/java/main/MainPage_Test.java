@@ -21,8 +21,6 @@ import java.util.Locale;
 @ExtendWith(UIExtension.class)
 public class MainPage_Test {
 
-    @Driver
-    private WebDriver driver;
 
     private GuiceScoped guiceScoped = new GuiceScoped();
 
@@ -31,7 +29,7 @@ public class MainPage_Test {
 
     @Test
     public void checkElementToTitleTest() {
-        String title = "Специализация QA Automation Engineer";
+        String title = "Data Engineer";
         new MainPage(guiceScoped)
                 .open();
 
@@ -43,7 +41,7 @@ public class MainPage_Test {
 
     }
 
-    @Test
+    /*@Test
     @Disabled
     public void maxDateTest() {
 
@@ -52,9 +50,9 @@ public class MainPage_Test {
 
         new PopularCursComponent(guiceScoped)
                 .dateStreamReduce((x, y) -> y.isAfter(x) ? y : x);
-    }
+    }*/
 
-    @Test
+   /* @Test
     @Disabled
     public void minDateTest() {
 
@@ -62,9 +60,9 @@ public class MainPage_Test {
                 .open();
 
         new PopularCursComponent(guiceScoped)
-                .dateStreamReduce((x, y) -> y.isAfter(x) ? x : y);
+                  .dateStreamReduce((x, y) -> y.isAfter(x) ? x : y);
 
-    }
+    }*/
 
     @Test
     @Disabled

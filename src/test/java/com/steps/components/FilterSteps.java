@@ -2,14 +2,10 @@ package com.steps.components;
 
 import com.componets.PopularCursComponent;
 import com.google.inject.Inject;
-import com.pages.SolutionarchitectPage;
 import io.cucumber.java.ru.Если;
 import io.cucumber.java.ru.Тогда;
-import org.junit.jupiter.api.Assertions;
 
-import java.util.Arrays;
-
-public class filterSteps {
+public class FilterSteps {
 
     @Inject
     private PopularCursComponent popularCursComponent;

@@ -36,7 +36,6 @@ public class UIExtension implements BeforeEachCallback, AfterEachCallback {
   @Override
   public void beforeEach(ExtensionContext extensionContext) throws BrowserNotSupportedException {
     Set<Field> fields = getAnnotatedFields(Driver.class, extensionContext);
-    driver = new DriverFactory().getDriver();
 
 
     for (Field field : fields) {
