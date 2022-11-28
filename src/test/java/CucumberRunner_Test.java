@@ -8,6 +8,9 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/resources/com",
+        dryRun = false,
+        tags = "@all",
+        snippets = CucumberOptions.SnippetType.UNDERSCORE,
         glue = {"com.steps","com.hooks"}
 )
 
