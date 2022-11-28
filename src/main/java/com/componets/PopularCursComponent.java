@@ -36,9 +36,9 @@ public class PopularCursComponent<T> extends AbsComponent<PopularCursComponent> 
 
 
 
-    public T waitLogoVisible(WebDriver driver, WebElement element) {
+    public PopularCursComponent waitLogoVisible(WebDriver driver, WebElement element) {
         WaitElementVisible.waitElementVisible(driver,element);
-        return (T) this;
+        return this;
     }
     private List<LocalDate> getDateFromPage() {
         List<WebElement> elements = driver.findElements(By.cssSelector(".lessons__new-item-start"));

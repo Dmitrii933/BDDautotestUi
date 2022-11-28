@@ -2,7 +2,7 @@ package com.steps.components;
 
 import com.componets.PopularCursComponent;
 import com.google.inject.Inject;
-import cucumber.api.java.ru.Если;
+import io.cucumber.java.ru.Если;
 
 
 public class FilterSteps {
@@ -10,8 +10,8 @@ public class FilterSteps {
     @Inject
     private PopularCursComponent popularCursComponent;
 
-    @Если("Кликнуть на заголовок курса {string}")
-    public void cursNotSelect(String courceName) {
-        popularCursComponent.filterStream(courceName).click();
+    @Если("Кликнуть на заголовок курса (.*)")
+    public void cursNotSelect(String courseName) {
+        popularCursComponent.filterStream(courseName).click();
     }
 }

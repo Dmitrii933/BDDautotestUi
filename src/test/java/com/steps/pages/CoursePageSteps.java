@@ -2,7 +2,7 @@ package com.steps.pages;
 
 import com.google.inject.Inject;
 import com.pages.SolutionarchitectPage;
-import cucumber.api.java.ru.Тогда;
+import io.cucumber.java.ru.Тогда;
 
 
 public class CoursePageSteps {
@@ -10,7 +10,7 @@ public class CoursePageSteps {
     @Inject
     private SolutionarchitectPage solutionarchitectPage;
 
-    @Тогда("Открыта страница c загловком курса {string}")
+    @Тогда("Открыта страница c загловком курса (.*)")
     public void selectCurs(String header) {
         solutionarchitectPage.pageHeaderShouldBeSameAs(header);
     }

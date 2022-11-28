@@ -7,9 +7,10 @@ import com.exception.BrowserNotSupportedException;
 import com.extensions.UIExtension;
 
 import com.pages.SolutionarchitectPage;
+import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
+
 import org.junit.jupiter.api.extension.ExtendWith;
 
 import org.openqa.selenium.WebDriver;
@@ -65,7 +66,7 @@ public class MainPage_Test {
     }*/
 
     @Test
-    @Disabled
+@Disabled
     public void checkElementMoveTest() {
 
         new MainPage(guiceScoped)
