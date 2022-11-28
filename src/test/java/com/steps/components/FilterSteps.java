@@ -2,8 +2,8 @@ package com.steps.components;
 
 import com.componets.PopularCursComponent;
 import com.google.inject.Inject;
-import io.cucumber.java.ru.Если;
-import io.cucumber.java.ru.Тогда;
+import cucumber.api.java.ru.Если;
+
 
 public class FilterSteps {
 

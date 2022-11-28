@@ -2,7 +2,8 @@ package com.steps.pages;
 
 import com.google.inject.Inject;
 import com.pages.SolutionarchitectPage;
-import io.cucumber.java.ru.Тогда;
+import cucumber.api.java.ru.Тогда;
+
 
 public class CoursePageSteps {
 

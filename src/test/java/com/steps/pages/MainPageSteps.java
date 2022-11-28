@@ -2,7 +2,7 @@ package com.steps.pages;
 
 import com.google.inject.Inject;
 import com.pages.MainPage;
-import io.cucumber.java.ru.Пусть;
+import cucumber.api.java.ru.Пусть;
 
 public class MainPageSteps {
 @Inject
